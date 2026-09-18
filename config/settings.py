@@ -3,15 +3,13 @@ import os
 import dj_database_url
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = os.getenv("SECRET_KEY")
+SECRET_KEY = os.getenv("nfpt=#*p^8r83slz$%2d!6-+%cbd__*7qvjwrkg*3ul55#v%p5")
 
-DEBUG = True
-
+DEBUG = False
 ALLOWED_HOSTS = os.getenv(
     "ALLOWED_HOSTS",
     "127.0.0.1,localhost"
 ).split(",")
-
 if os.getenv("RENDER_EXTERNAL_HOSTNAME"):
     ALLOWED_HOSTS.append(os.getenv("RENDER_EXTERNAL_HOSTNAME"))
     
