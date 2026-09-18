@@ -1,8 +1,10 @@
 from pathlib import Path
+import os
 BASE_DIR = Path(__file__).resolve().parent.parent
-SECRET_KEY = "change-this-secret-key"
-DEBUG = True
-ALLOWED_HOSTS = []
+SECRET_KEY = os.getenv("SECRET_KEY")
+
+DEBUG = os.getenv("DEBUG", "False") == "True"
+ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
 INSTALLED_APPS = [
     "django.contrib.admin","django.contrib.auth","django.contrib.contenttypes",
     "django.contrib.sessions","django.contrib.messages","django.contrib.staticfiles",
@@ -35,6 +37,7 @@ TIME_ZONE = "Asia/Kolkata"
 USE_I18N = True
 USE_TZ = True
 STATIC_URL = "static/"
+STATIC_ROOT = BASE_DIR / "staticfiles"
 STATICFILES_DIRS = [BASE_DIR/"static"]
 LOGIN_URL = "/login/"
 LOGIN_REDIRECT_URL = "/"
