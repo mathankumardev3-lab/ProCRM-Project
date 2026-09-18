@@ -3,7 +3,7 @@ import os
 import dj_database_url
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = os.getenv("nfpt=#*p^8r83slz$%2d!6-+%cbd__*7qvjwrkg*3ul55#v%p5")
+SECRET_KEY = os.getenv("+gxk+8bv(!q#w^vme(q=1jt!xpz-eho7ou&w5(n!r&$&x41afp")
 
 DEBUG = False
 ALLOWED_HOSTS = os.getenv(
