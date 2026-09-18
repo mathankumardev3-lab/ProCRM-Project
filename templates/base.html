@@ -1,0 +1,9 @@
+{% load static %}
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ProCRM</title><link rel="stylesheet" href="{% static 'css/style.css' %}"></head>
+<body><div class="shell"><aside class="sidebar"><div class="brand">Pro<span>CRM</span></div>
+<nav><a href="{% url 'dashboard' %}">◈ Dashboard</a><a href="{% url 'customer_list' %}">♙ Customers</a><a href="{% url 'lead_list' %}">⌁ Leads / Pipeline</a><a href="{% url 'invoice_list' %}">▤ Invoices</a><a href="/admin/">⚙ Admin</a></nav>
+<div class="side-bottom"><div class="muted">{{ request.user.username }}</div><a href="{% url 'logout' %}">Logout ↗</a></div></aside>
+<main class="main"><header><div><div class="eyebrow">BUSINESS WORKSPACE</div><h1>{% block heading %}Dashboard{% endblock %}</h1></div><div class="user-chip">● Online</div></header>
+{% if messages %}{% for message in messages %}<div class="alert">{{ message }}</div>{% endfor %}{% endif %}
+{% block content %}{% endblock %}</main></div><script src="{% static 'js/app.js' %}"></script></body></html>

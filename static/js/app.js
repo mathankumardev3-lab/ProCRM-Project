@@ -1,0 +1,1 @@
+document.querySelectorAll("form").forEach(form=>{form.addEventListener("submit",()=>{const b=form.querySelector("button[type=submit]");if(b){b.disabled=true;b.textContent="Saving..."}})});
